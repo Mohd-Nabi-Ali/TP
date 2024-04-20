@@ -1,0 +1,13 @@
+1. установить visual studio code/android studio/python/kotlin/postgres
+2. Настроить БД
+CREATE USER *имя пользователя* WITH PASSWORD 'password';
+CREATE DATABASE authdb;
+GRANT ALL PRIVILEGES ON DATABASE authdb TO *имя пользователя*;
+3. запустить сервера из файла ServicesRehabilitation через команды в terminal:
+pip install uvicorn
+pip install fastapi uvicorn sqlalchemy psycopg2-binary pyjwt passlib[bcrypt]
+uvicorn auth:app --reload
+workers:app --reload --port 8001
+rehabilitation:app --reload --port 8002 
+forum:app --reload --port 8003 
+4. Запустить через Android Studio клиентскую часть через обычный запуск
